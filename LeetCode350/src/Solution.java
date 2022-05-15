@@ -16,16 +16,12 @@ public class Solution {
 			}
 			else if (nums1[i] > nums2[j]) {
 				j++;
-			} else {
-				ans[k++] = nums1[i++];
+			} else {// nums1[i] == nums2[j] の場合
+				ans[k++] = nums1[i++]; // ansに要素を入れて
 				j++;
 			}
 		}
-		return Arrays.copyOfRange(ans, 0, k);
+		return Arrays.copyOfRange(ans, 0, k);// 最初からkまでの配列を帰す
 	}
-	
-//	public int[] intersect(int[] nums1, int[] nums2) {
-//		
-//	}
 
 }
