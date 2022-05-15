@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Solution {
 //	public void merge(int[] nums1, int m, int[] nums2, int n) {
 //		int[] combinedArray = new int[m + n];
@@ -20,17 +22,22 @@ public class Solution {
 //		System.out.println(Arrays.toString(nums1));
 //
 //	}
-	
+
 	public void merge(int[] nums1, int m, int[] nums2, int n) {
-		int p1 = m-1, p2 = n-1, i = m+n-1;
-		
-		while(p2 >=0) {
-			if(p1 >= 0 && nums1[p1] > nums2[p2]) {
-				nums1[i--] = nums1[p1--];
+		int nums1Length = m - 1; // 配列nums1の長さ
+		int nums2Length = n - 1; //　配列nums2の長さ
+		int index = m + n - 1; //　nums1, nums2を合わせた配列の長さ
+
+		while (nums2Length >= 0) {
+			if (nums1Length >= 0 && nums1[nums1Length] > nums2[nums2Length]) {
+				nums1[index--] = nums1[nums1Length--];
+				//index--;
+				
+			} else {
+				nums1[index--] = nums2[nums2Length--];
+				//index--;
 			}
-			else {
-				nums1[i--] = nums2[p2--];
-			}
+			System.out.println(Arrays.toString(nums1));
 		}
 	}
 
