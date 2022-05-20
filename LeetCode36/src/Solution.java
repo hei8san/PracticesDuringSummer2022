@@ -36,25 +36,27 @@ public class Solution {
 //		
 //		
 //	}
-	
-	 public boolean isValidSudoku(char[][] board) {
-		 
-		 for(int i = 0; i < 9; i++) {
-			 Set<Character> setRow = new HashSet<>();
-			 Set<Character> setCol = new HashSet<>();
-			 for(int j = 0; j < 9; j++) {
-				 if(setCol.contains(board[j][i])) {
-					 return false;
-				 }else {
-					 setCol.add(board[j][i]);
-				 }
-				 if(setRow.contains(board[i][j])) {
-					 return false;
-				 }else {
-					 setRow.add(board[i][j]);
-				 }
-			 }
-		 }
-	        
-	    }
+
+	public boolean isValidSudoku(char[][] board) {
+		Set<String> seen = new HashSet<>();
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				char current_val = board[i][j];
+				if (current_val != '.') {// if each mass contains value
+					if (!seen.add(current_val + " found in row " + i)
+							|| !seen.add(current_val + " found in column " + j)
+							|| !seen.add(current_val + " found in sub box " + i / 3 + "-" + j / 3)) {// if the element
+																										// is already
+																										// contaitned in
+																										// the HashSet
+						return false;
+					}
+
+				}
+
+			}
+		}
+		return true;
+
+	}
 }
