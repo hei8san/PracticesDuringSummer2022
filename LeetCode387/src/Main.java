@@ -5,7 +5,7 @@ public class Main {
 		Solution s = new Solution();
 		String str = "leetcode";
 		System.out.println(s.firstUniqChar(str));
-
+		System.out.println(s.firstUniqCharTest(str));
 	}
 
 }

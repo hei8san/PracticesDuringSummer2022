@@ -25,4 +25,44 @@ public class Solution {
 		
 
 	}
+	
+	public int firstUniqCharTest(String s) {
+		Map<Character, Integer> map = new HashMap<>();
+		
+		for(int i =0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if(map.containsKey(c)) {
+				map.put(c, -1);
+			}else {
+				map.put(c, i);
+			}
+			
+		}
+		
+		int min = Integer.MAX_VALUE;
+		
+		for(char c : map.keySet()) {
+			if(map.get(c) != -1) {
+				min = Math.min(map.get(c), min);
+			}
+		}
+		if(min != Integer.MAX_VALUE) {
+			return min;
+		}else {
+			return -1;
+		}
+		
+		
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
