@@ -51,7 +51,7 @@ public class Solution {
 				ans[1] = i;
 			} else {
 				map.put(nums[i], i);
-				System.out.println(map.toString());
+				//System.out.println(map.toString());
 			}
 			
 		}
