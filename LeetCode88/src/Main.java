@@ -8,7 +8,7 @@ public class Main {
 		int[] nums2 = {2,5,6};
 		int n = 3;
 		
-		solution.merge(nums1, m, nums2, n);
+		solution.mergeTest(nums1, m, nums2, n);
 
 	}
 

@@ -40,5 +40,53 @@ public class Solution {
 			System.out.println(Arrays.toString(nums1));
 		}
 	}
+	
+	
+	public void mergeTest(int[] nums1, int m, int[] nums2, int n) {
+		if(n == 0) return; 
+		
+		int size = n+m-1;
+		int nums1L = m-1;
+		int nums2L = n-1;
+		
+		
+		while(nums2L >= 0) {
+			
+			if(nums1L >= 0 && nums1[nums1L] < nums2[nums2L]) {
+				nums1[size] = nums2[nums2L];
+				nums2L--;
+				size--;
+			}else if(nums1L >= 0 &&nums1[nums1L] > nums2[nums2L]) {
+				nums1[size] = nums1[nums1L];
+				nums1[nums1L] = 0;
+				size--;
+				nums1L--;
+			}else {
+				nums1[size] = nums2[nums2L];
+				nums2L--;
+				size--;
+			}
+			
+			
+		}
+		System.out.println(Arrays.toString(nums1));
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
