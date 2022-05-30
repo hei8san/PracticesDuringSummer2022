@@ -12,4 +12,40 @@ public class Solution {
 
 		return ans;
 	}
+	
+	
+	
+	public int maxSubArrayTest(int nums[]) {
+		int size = nums.length;
+		int[] memo = new int[size];
+		int largestTempSum = 0;
+		int ans = Integer.MIN_VALUE;
+		for (int i = 0; i < size; i++) {
+
+			largestTempSum += nums[i];
+			if (largestTempSum < nums[i]) {
+				memo[i] = nums[i];
+				largestTempSum = nums[i];
+			} else {
+				memo[i] = largestTempSum;
+			}
+			ans = Math.max(ans, memo[i]);
+		}
+		//System.out.println(Arrays.toString(memo));
+		return ans;
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
